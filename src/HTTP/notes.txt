@@ -1,0 +1,4 @@
+for data show -> get
+for store data -> post
+update -> put 
+delete data -> delete

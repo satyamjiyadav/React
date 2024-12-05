@@ -1,0 +1,33 @@
+import { Component } from "react"
+
+Qus : what are hooks?
+Ans : hooks are a new features addition in react version 16.8
+which alloows you to use react features without having to write 
+a class component.
+
+ex: state of a Component
+
+hooks don't work inside class
+
+
+Qus : why hooks?
+Ans : 
+reason1  : Understand how this keyword works in javascript.Ans
+           Remember to bind event handlers in class componennt
+
+reason2 : There is no particular way to reuse stateful component logic
+          Hoc and render props patterns do address this problem
+
+reason3 : create commponent for complex scenarious such as data fetching and 
+          subscribing code is not organising in one getByPlaceholderText.Ans
+
+          ex : Data fetching - In componentDidMount and componentDidUpdate
+
+Summary
+
+1 : Hooks are a new features additionn in react version 16.8
+2 : They allow you to use react features without having to write class componennt
+3 : Avoid the whole confusion with 'this' keyword
+4 : Allow you to reuse stateful logic
+5 : Organize the logic inside a commponent into reusable isolated units
+

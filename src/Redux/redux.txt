@@ -1,0 +1,8 @@
+Redux is a toolkit that helps manage data (also known as "state") in large react apps.
+it allows us to keep all our apps data in a single place. known as the redux store.
+making it easy to share and update data across different parts of the app
+
+How redux works
+1->store
+2->action
+3->reducer

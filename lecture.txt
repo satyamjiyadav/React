@@ -1,0 +1,124 @@
+lecture-5
+Qus : what is the alternative of npm?
+Ans : yarn developed by facebook.
+
+Qus : what is current version of react?
+Ans : package.json me dekh lo.
+
+Qus : what is difference between package.json and package.json-lock?
+Ans : package-lock has history and detail of all packages(node modules) and its integrity.
+    : package.json has details of application.
+
+Qus : Src folder?
+Ans : kaam ki cheeche hoti hai isme.
+
+Qus : index.js?
+Ans : entry point of react.
+
+Qus : what is component?
+Ans : A part of large thing.
+      A piece of code that can reuse.
+      Such as Function.
+      But more powerful than function.
+      Header, footer is best example.
+
+Qus : How many types of components are there in react?
+Ans : mainly two types k hote hai:
+      (1) Functional Component.
+      (2) Class Component.
+
+       -->Some are other also
+
+       Hoc (high order component).
+       pure component.
+       controlled component.
+       uncontrolled component.
+
+Qus : JSX?
+Ans : javascript xml(jsx) earlier we can't use javascript and html togeher we use script for that.
+      But now in react we can write html and javascripttogetther.
+      ex user.js wali fie me likh k dekkh lo.
+
+Qus : can we use angular and react together?
+Ans : yes, react is a library and angular is a framework.
+      so, we ca use a library inside a framewok.
+
+Qus : state?
+Ans : just like variable . used to stare data;
+      when we use state on changing anything react directly pta kr leta ha aur page me show kr deta hai chnage ko.
+      variable me change krenge to react will not recognise.
+
+Qus : Re-rendering?
+Ans : ek component phir se update hua hai.
+
+Qus : can we use state outside state?
+Ans :
+
+Qus : is state public or private ?
+Ans : In React.js, the state is private and fully controlled by the component 
+      that defines it1. This means that the state cannot be accessed or 
+      modified directly from outside the component. Instead, it can only be updated 
+      within the component itself using the setState method.
+
+
+Qus : what is props?
+Ans : In React, props (short for “properties”) are a mechanism for passing data 
+      from a parent component to a child component. 
+      They allow you to customize and configure child components by providing 
+      them with values or functions
+
+
+Ques : what is the difference between life cycle method and phase ?
+Ans : there are so many life cycle methods but there are only 3 phase.
+      (1) Mounting
+      (2) Updating
+      (3) UnMounting
+
+
+Key Differences Between Lifecycle Methods and Phases
+------------------------------------------------------------------------------------------------------------------------------------------------
+Aspect	                      Lifecycle Method	                                           Lifecycle Phase
+------------------------------------------------------------------------------------------------------------------------------------------------
+What it represents	A function that gets called at a specific point in time	A period or stage in the component's lifecycle
+Purpose	            To execute code at specific events (like fetching data)	To define the different periods of a component’s existence
+Examples	            componentDidMount, shouldComponentUpdate	                  Mounting, Updating, Unmounting
+Level of control   	Provides control over what to do during each phase     	Represents the natural flow of a component's lifecycle
+
+
+real life example
+(1) turn on phone
+(2) use different apps
+(3) turn off the phone
+
+
+Qus : Is constructor is a life cycle method ?
+Ans : Yes.
+
+Qus : what is the meaning of render method ? 
+Ans : sudh hindi me (prastut krna).
+
+The render() method in React is a special function responsible for describing the UI (User Interface) of a component.
+It defines what should be displayed on the screen by returning JSX (JavaScript XML) elements, 
+which React then converts into actual HTML for rendering in the browser.
+
+
+Qus : component did mount?
+Ans : use ->  calling api when loading page
+      render called first after that compo did mount is called
+
+Qus: diff b/w compDidMount and compDidUpdate ?
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aspect	                             componentDidMount()	                                                                        componentDidUpdate()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Purpose	        Called once after the component is initially mounted (inserted into the DOM).           	Called after every update (re-render) of the component due to changes in state or props.
+When it Runs        Executes only once, right after the first render() method.	                              Executes every time the component updates after render() is called (except for the initial render).
+Use Cases	        Ideal for data fetching, subscriptions, setting up event listeners, or any one-time setup.	Ideal for responding to changes in props or state, such as making API calls when data changes, updating the DOM, or triggering side effects.
+Example Scenario 	  Fetching data from an API when a page loads for the first time.                         	Fetching updated data when a user changes a filter option, or syncing the component when it receives new props.
+Clean-Up	        Does not need explicit clean-up; however, clean-up can be done in componentWillUnmount().	Can be paired with componentWillUnmount() to handle clean-up when the component updates frequently.
+
+
+deploy:
+1: npm run build
+2: netlify init
+3: netlify deploy --prod 
+4: build directory select 

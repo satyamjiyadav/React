@@ -1,0 +1,335 @@
+import logo from "./logo.svg";
+import "./App.css";
+import { useState, use } from "react";
+import React from "react";
+import User from "./User";
+import ClassComponent from "./ClassComponent";
+import Events from "./Events";
+import State from "./State";
+import Todolist from "./Todolist";
+import Props from "./Props";
+import Test from "./Test";
+import HideShow from "./HideShow";
+import Form from "./Form";
+import Input from "./Input";
+import Condition from "./Condition";
+import PropAsFunc from "./PropAsFunc";
+import Render from "./Render";
+
+// function App() {
+//   function Apple()
+//   {
+//     return (<div>Component inside component</div>)
+//   }
+
+//   function getdata(){
+//     alert("Hello from App");
+//   }
+
+//   const [name, setName] = useState("Satyam");
+//   return (
+//     <div className="App">
+//       {/* <h1>hello world</h1> */}
+
+//       {/* <User/>
+//       <ClassComponent/>
+//       <Apple/> */}
+//       {/* <input/> */}
+//       {/* <Events/> */}
+//       {/* <State/> */}
+//       {/* <Todolist/> */}
+
+//       {/* <Props name={name} email = {"satyamjiyadav12@gmail.com"} other={{address : 'Delhi' , mobile : '1452364'}} /> */}
+//       {/* <props name = {name}/> */}
+//       {/* <button onClick={()=>{setName("Shivam")}} >Update name</button> */}
+
+//       {/* <Test/> */}
+//       {/* <Form/> */}
+//       {/* <Condition/> */}
+//       {/* <PropAsFunc data = {getdata}/> */}
+//       {/* <HideShow/> */}
+//       {/* re- use of component */}
+//       {/* <User/>
+//       <User/> */}
+//       {/* <User></User> */}
+//       {/* <User/> aise bhi use kr skte hai */}
+//     </div>
+//   );
+// }
+// export default App;
+
+// class App extends React.Component{
+//   constructor(){
+//     super();
+//     this.state = {data : "satyam"};
+//   }
+
+//   render()
+//   {
+//     return(
+//       <div>
+//         <h1>Hello This is {this.state.data}</h1>
+//       </div>
+//     )
+//   }
+// }
+// export default App;
+
+// ------------------Render--------------------------
+// function App() {
+//   const [name,setName]=React.useState("Satyam")
+
+//     return (
+//       <div className="App">
+//        <h1>Render Method in React</h1>
+//        <Render />
+//        {/* <button onClick={()=>setName("Paras")}>Update Name</button> */}
+//       </div>
+//     );
+//   }
+// export default App;
+
+// ------------------------component did mount--------------------
+// class App extends React.Component {
+
+//   constructor()
+//   {
+//     super();
+//     console.warn("constructor")
+//     this.state = {
+//       name : "Satyam"
+//     }
+
+//   }
+//   componentDidMount()
+//   {
+//     console.warn("componentDidMount")
+
+//   }
+//   render()
+//   {
+//     console.warn("render")
+
+//     return (
+//       <div className="App">
+//         <h1>Component did Mount :{this.state.name} </h1>
+//         <button onClick = {() => {this.setState({name : "Ayush"})}}>Update Name</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// ----------------------------------component did update-------------------------------
+// class App extends React.Component{
+//   constructor(){
+//     super();
+//     console.log("constructor");
+
+//     this.state = {
+//       name : "Satyam",
+//       ct : 0
+//     }
+//   }
+
+//   // ye aise nhi chalta hai ye state ya prop k update hone k baad hi chalta hai
+//   componentDidUpdate(prevProp, prevState, snapShot)
+//   {
+//     console.log("component did update", prevState.ct, this.state.ct, snapShot);
+//     if(this.state.count < 10){
+//       this.setState({ct : this.state.ct + 1});
+//     }
+//   }
+
+//   // render k andar state update nhi hoti hai
+//   render()
+//   {
+//     console.log("render")
+//     return(
+//       <div className='App'>
+//         <h1>Component did update : {this.state.name} : {this.state.ct}</h1>
+//         <button onClick = {() => {this.setState({name : "Paras"})}}>Update name</button>
+//         <button onClick = {() => {this.setState({ct : this.state.ct+1})}}>Update count</button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default App;
+
+// -------------------------should component update life cycle method ---------------------
+
+// class App extends React.Component{
+//   constructor(){
+//     super();
+//     console.log("contructor");
+
+//     this.state = {
+//       count : 0
+//     }
+//   }
+
+//   // ye rendering update ko block kr deta hai
+//   shouldComponentUpdate(){
+//     console.log("should componennt update" , this.state.count);
+//     // return true krenge tabhi value update hogi
+//     // return true;
+
+//     if(this.state.count>=5 && this.state.count<=10){
+//       return true;
+//     }
+//   }
+
+//   render(){
+//     return(
+//       <div>
+//         <h1>Should component update {this.state.count}</h1>
+//         <button onClick = {()=> {this.setState({count : this.state.count + 1})}}>Update counter</button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default App;
+
+// ----------------------------------component will unmount--------------
+
+// import Stud from "./Stud";
+
+// class App extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       show: true,
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         {this.state.show == true? <Stud /> : <h4>Component is removed</h4>}
+//         <button onClick={() => this.setState({ show: !this.state.show })}>
+//           {" "}
+//           Toogle Student Component
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// -------------------------------useState Hooks-------------------
+// function App() {
+//   const [data, setdata] = useState("Satyam");
+
+//   return (
+//     <div className="App">
+//       <h1>{data}</h1>
+//       <button onClick={() => setdata("Paras")}>Update</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// ------------------------------useEffect hook-------------------------
+// import { useEffect } from "react";
+// function App() {
+//   const [count, setcount] = useState(0);
+//   React.useEffect(() => {
+//     alert("useEffect");
+//   });
+//   return (
+//     <div className="App">
+//       <h1>UseEffect  : {count}</h1>
+//       <button onClick = {()=> setcount(count+1)}>update</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// -------------------------------useEffect with state and props------------
+// import { useEffect } from "react";
+// function App() {
+//   const [data, setdata] = useState(10);
+//   const [count, setcount] = useState(100);
+//   React.useEffect(() => {
+//     console.log("useEffect");
+//   });
+//   return (
+//     <div className="App">
+//       <h1>UseEffect  : {count}</h1>
+//       <h1>Data : {data}</h1>
+//       <button onClick = {()=> setcount(count+1)}>update</button>
+//       <button onClick = {()=> setdata(data+1)}>update</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//-------------------------------------form se data nikalne ka code --------------------------
+// function App() {
+//   const [data1, setdata1] = useState("");
+//   const [data2, setdata2] = useState("");
+//   return (
+//     <div className="App">
+//       <h1>
+//         {data1} {data2} {" "}
+//       </h1>
+
+//       <form>
+//         name1 :{" "}
+//         <input
+//           type="text"
+//           value={data1}
+//           onChange={(e) => setdata1(e.target.value)}
+//         ></input>
+//         name2 :{" "}
+//         <input
+//           type="text"
+//           value={data2}
+//           onChange={(e) => setdata2(e.target.value)}
+//         ></input>
+//         <button>Display names</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//------------------------------style in react js-------------------
+
+// function App() {
+//   const [data1, setdata1] = useState("");
+//   const [data2, setdata2] = useState("");
+//   return (
+//     <div className="App">
+//       <h1>
+//         {data1} {data2}{" "}
+//       </h1>
+
+//       <form>
+//         name1 :{" "}
+//         <input
+//           type="text"
+//           value={data1}
+//           onChange={(e) => setdata1(e.target.value)}
+//         ></input>
+//         name2 :{" "}
+//         <input
+//           type="text"
+//           value={data2}
+//           onChange={(e) => setdata2(e.target.value)}
+//         ></input>
+//         <button>Display names</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;
